@@ -5,6 +5,7 @@ use App\Http\Controllers\DemoController;
 use App\Http\Controllers\SingleActionController;
 use App\Http\Controllers\PhotoController;
 use App\Http\Controllers\RegistrationController;
+use App\Http\Controllers\CustomerController;
 
 // Route::get('/', function () {
 //     return view('welcome');
@@ -50,3 +51,8 @@ Route::resource('photo',PhotoController::class);
 
 Route::get('register',[RegistrationController::class,'index']);
 Route::post('/register',[RegistrationController::class,'register']);
+
+Route::get('/customer/create',[CustomerController::class,'index']);
+Route::post('/customer',[CustomerController::class,'store']);
+Route::get('/customer/view',[CustomerController::class,'view']);
+
